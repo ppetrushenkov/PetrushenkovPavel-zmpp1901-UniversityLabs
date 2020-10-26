@@ -1,0 +1,24 @@
+<<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>"Архив статей"</title>
+  </head>
+  <body>
+    <div class="header">
+      <img src="https://startpage.com/av/proxy-image?piurl=http%3A%2F%2Fsun9-56.userapi.com%2Fimpg%2Fc857528%2Fv857528896%2F23077e%2F27hX4doxNgE.jpg%3Fsize%3D200x0%26quality%3D90%26crop%3D0%2C0%2C400%2C400%26sign%3D15f57383ff34157fc54492c13d3297ce%26ava%3D1&sp=1603723246T8e34fb6ab4a7b3f0610d83ec625b304eefcabf32cc6e7c356a7aa7745292e687" />
+    </div>
+    <div class="archive">
+      {% for post in posts %}
+        <div class="one-post">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <div class="article-info">
+          <div class="article-author">{{ post.author.username }}</div>
+          <div class="article-created-date">{{ post.created_date }}</div>
+        </div>
+        <p class="article-text">{{ post.get_excerpt }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
